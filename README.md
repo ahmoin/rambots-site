@@ -1,3 +1,3 @@
-# ahmoin/template
+# Rambots Site
 
-A template for building a website with Next.js, Tailwind CSS, and TypeScript.
+NYC Team from Manhattan Center for Science and Mathematics - Rambots 4571

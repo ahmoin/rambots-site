@@ -10,8 +10,7 @@ export default function Page() {
 				</h1>
 				<h2 className="text-2xl md:text-4xl text-muted-foreground w-full lg:w-1/2 mx-auto">
 					<Balancer>
-						NYC Team from Manhattan Center for Science and Mathematics -{" "}
-						{siteConfig.name} 4571
+						{siteConfig.description}
 					</Balancer>
 				</h2>
 			</div>
