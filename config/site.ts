@@ -5,6 +5,7 @@ export const siteConfig = {
 	description:
 		"NYC Team from Manhattan Center for Science and Mathematics - Rambots 4571",
 	name: "Rambots",
+	teamNumber: "4571",
 	url: "https://rambots.vercel.app",
 };
 

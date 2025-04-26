@@ -2,7 +2,8 @@ type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
 	logo: (props: IconProps) => (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1255" {...props}>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1255" aria-label="Rambots Logo" {...props}>
+			<title>Rambots Logo</title>
 			<path
 				id="d"
 				d="M1051.39,1126.61c-10.23-71.53-2.54-145.42,17.97-214.4,7.96-26.78,19.92-64.04,30.68-89.4,1.93-4.55,7.19-15.53,10.75-18.4,11.42-9.21,39.2-17.58,53.45-25.82,21.65-12.51,38.38-37.83,58.39-53.52,5.49-4.3,10.47-8.46,17.49-9.89l4.72,66.98c2.69,142.28-115.8,235.9-187.18,344.59l-6.27-.16Z"

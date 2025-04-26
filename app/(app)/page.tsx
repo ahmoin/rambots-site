@@ -1,3 +1,4 @@
+import { Sponsors } from "@/components/sponsors";
 import { siteConfig } from "@/config/site";
 import Balancer from "react-wrap-balancer";
 
@@ -9,11 +10,10 @@ export default function Page() {
 					{siteConfig.name.toUpperCase()}
 				</h1>
 				<h2 className="text-2xl md:text-4xl text-muted-foreground w-full lg:w-1/2 mx-auto">
-					<Balancer>
-						{siteConfig.description}
-					</Balancer>
+					<Balancer>{siteConfig.description}</Balancer>
 				</h2>
 			</div>
+			<Sponsors />
 		</div>
 	);
 }

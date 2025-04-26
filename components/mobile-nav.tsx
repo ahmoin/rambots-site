@@ -33,7 +33,9 @@ export function MobileNav() {
 							strokeWidth="1.5"
 							stroke="currentColor"
 							className="!size-6"
+							aria-label="Toggle Menu"
 						>
+							<title>Toggle Menu</title>
 							<path
 								strokeLinecap="round"
 								strokeLinejoin="round"

@@ -16,7 +16,7 @@ const META_THEME_COLORS = {
 
 export const metadata: Metadata = {
 	title: {
-		default: siteConfig.name,
+		default: `${siteConfig.name} ${siteConfig.teamNumber}`,
 		template: `%s - ${siteConfig.name}`,
 	},
 	metadataBase: new URL(siteConfig.url),
