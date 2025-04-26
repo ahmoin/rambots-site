@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlowingEffect } from "@/components/glowing-effect";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
@@ -21,7 +22,15 @@ function SponsorCard({
 
 	return (
 		<Link className="aspect-square h-96 w-96" href={href}>
-			<Card className="size-full">
+			<Card className="size-full relative">
+				<GlowingEffect
+					spread={40}
+					glow={true}
+					proximity={64}
+					disabled={false}
+					inactiveZone={0.01}
+					borderWidth={2}
+				/>
 				<CardContent className="w-full h-48 flex items-center justify-center mt-4">
 					<Image
 						src={image}
@@ -60,8 +69,8 @@ export function Sponsors() {
 			<div>
 				<h2 className="text-6xl text-center font-bold mb-8">Our Sponsors</h2>
 				<p className="text-center text-lg text-muted-foreground mb-8">
-					We are grateful for the support of our sponsors, who make our team&apos;s
-					success possible.
+					We are grateful for the support of our sponsors, who make our
+					team&apos;s success possible.
 				</p>
 			</div>
 			<div className="flex flex-wrap justify-center gap-4 w-3/4 mx-auto">
