@@ -36,7 +36,7 @@ export const AnimatedCard = ({
 					left: `${mouse.elementX}px`,
 					top: `${mouse.elementY}px`,
 					background:
-						"linear-gradient(135deg, #3BC4F2, #7A69F9,#F26378,#F5833F)",
+						"linear-gradient(135deg, #3BF2EC, #6994F9,#7A69F9,#853FF5)",
 				}}
 			/>
 			<div className="absolute inset-px rounded-[19px] bg-slate-200/80 dark:bg-card/80" />
