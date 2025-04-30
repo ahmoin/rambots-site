@@ -39,7 +39,7 @@ export const AnimatedCard = ({
 						"linear-gradient(135deg, #3BC4F2, #7A69F9,#F26378,#F5833F)",
 				}}
 			/>
-			<div className="absolute inset-px rounded-[19px] bg-slate-200/80 dark:bg-card" />
+			<div className="absolute inset-px rounded-[19px] bg-slate-200/80 dark:bg-card/80" />
 			{children && (
 				<div
 					className={cn(
