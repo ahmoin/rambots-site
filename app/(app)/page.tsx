@@ -1,3 +1,4 @@
+import { MCSMBanner } from "@/components/mcsm-banner";
 import { Sponsors } from "@/components/sponsors";
 import { siteConfig } from "@/config/site";
 import Balancer from "react-wrap-balancer";
@@ -13,6 +14,7 @@ export default function Page() {
 					<Balancer>{siteConfig.description}</Balancer>
 				</h2>
 			</div>
+			<MCSMBanner />
 			<Sponsors />
 		</div>
 	);

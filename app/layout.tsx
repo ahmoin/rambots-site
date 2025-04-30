@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 const META_THEME_COLORS = {
 	light: "#ffffff",
@@ -99,6 +100,7 @@ export default function RootLayout({
 					enableColorScheme
 				>
 					{children}
+					<TailwindIndicator />
 					<Toaster />
 					<Analytics />
 				</ThemeProvider>

@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GlowingEffect } from "@/components/glowing-effect";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,11 +12,13 @@ function SponsorCard({
 	href,
 	image,
 	darkImage,
+	icon,
 }: {
 	name: string;
 	href: string;
 	image: string;
 	darkImage?: string;
+	icon?: boolean;
 }) {
 	const hasDarkImage = !!darkImage;
 
@@ -32,24 +34,32 @@ function SponsorCard({
 					borderWidth={2}
 				/>
 				<CardContent className="w-full h-48 flex items-center justify-center mt-4">
-					<Image
-						src={image}
-						alt={name}
-						className={cn(
-							"object-contain size-full",
-							hasDarkImage ? "dark:hidden" : "",
-						)}
-						width={512}
-						height={512}
-					/>
-					{hasDarkImage && (
-						<Image
-							src={darkImage}
-							alt={`${name} (Dark Mode)`}
-							className="object-contain size-full hidden dark:block"
-							width={512}
-							height={512}
-						/>
+					{icon ? (
+						<div className="size-full flex items-center justify-center">
+							<Sparkles size={128} />
+						</div>
+					) : (
+						<>
+							<Image
+								src={image}
+								alt={name}
+								className={cn(
+									"object-contain size-full",
+									hasDarkImage ? "dark:hidden" : "",
+								)}
+								width={512}
+								height={512}
+							/>
+							{hasDarkImage && (
+								<Image
+									src={darkImage}
+									alt={`${name} (Dark Mode)`}
+									className="object-contain size-full hidden dark:block"
+									width={512}
+									height={512}
+								/>
+							)}
+						</>
 					)}
 				</CardContent>
 				<CardHeader className="text-center mt-8">
@@ -65,7 +75,7 @@ function SponsorCard({
 
 export function Sponsors() {
 	return (
-		<section className="flex flex-col items-center justify-center w-full py-32">
+		<section className="flex flex-col items-center justify-center w-full">
 			<div>
 				<h2 className="text-6xl text-center font-bold mb-8">Our Sponsors</h2>
 				<p className="text-center text-lg text-muted-foreground mb-8">
@@ -95,6 +105,13 @@ export function Sponsors() {
 					href="https://www.nycfirst.org/"
 					image="/nyc-first.png"
 					darkImage="/nyc-first-dark.png"
+				/>
+				<SponsorCard
+					href="/sponsors"
+					name="Become a Sponsor!"
+					image="/default-sponsor.png"
+					darkImage="/default-sponsor-dark.png"
+					icon={true}
 				/>
 			</div>
 		</section>

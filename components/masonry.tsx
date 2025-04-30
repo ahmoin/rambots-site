@@ -128,11 +128,18 @@ const Masonry: React.FC<MasonryProps> = ({ data }) => {
 								onClick={() => {
 									setSelectedImage(item.image);
 								}}
+								onKeyDown={(e) => {
+									if (e.key === "Enter" || e.key === " ") {
+										setSelectedImage(item.image);
+									}
+								}}
+								// biome-ignore lint/a11y/noNoninteractiveTabindex: intentionally adding tabindex for accessibility
+								tabIndex={0}
 							/>
 						</DialogTrigger>
 						<DialogContent className="md:min-w-[80vw]">
 							{selectedImage && (
-								// eslint-disable-next-line @next/next/no-img-element
+								// biome-ignore lint/nursery/noImgElement: needed for dynamic image sizes
 								<img
 									src={selectedImage}
 									alt="Full Size"

@@ -6,8 +6,8 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint && biome lint --write --unsafe",
-		"lint:fix": "next lint --fix && biome lint --write --unsafe",
+		"lint": "biome lint",
+		"lint:fix": "biome lint --write --unsafe",
 		"format": "biome format --write"
 	},
 	"dependencies": {
@@ -32,13 +32,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.0-beta.1",
-		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
 		"@types/node": "^22",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
-		"eslint": "^9",
-		"eslint-config-next": "15.3.1",
 		"tailwindcss": "^4",
 		"typescript": "^5"
 	}
