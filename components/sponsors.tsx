@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ExternalLink, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatedCard } from "@/components/animated-card";
 
 function SponsorCard({
 	name,
@@ -24,51 +25,45 @@ function SponsorCard({
 
 	return (
 		<Link className="aspect-square h-96 w-96" href={href}>
-			<Card className="size-full relative">
-				<GlowingEffect
-					spread={40}
-					glow={true}
-					proximity={64}
-					disabled={false}
-					inactiveZone={0.01}
-					borderWidth={2}
-				/>
-				<CardContent className="w-full h-48 flex items-center justify-center mt-4">
-					{icon ? (
-						<div className="size-full flex items-center justify-center">
-							<Sparkles size={128} />
-						</div>
-					) : (
-						<>
-							<Image
-								src={image}
-								alt={name}
-								className={cn(
-									"object-contain size-full",
-									hasDarkImage ? "dark:hidden" : "",
-								)}
-								width={512}
-								height={512}
-							/>
-							{hasDarkImage && (
+			<AnimatedCard className="size-full relative">
+				<Card className="bg-transparent border-none shadow-none">
+					<CardContent className="w-full h-48 flex items-center justify-center mt-4">
+						{icon ? (
+							<div className="size-full flex items-center justify-center">
+								<Sparkles size={128} />
+							</div>
+						) : (
+							<>
 								<Image
-									src={darkImage}
-									alt={`${name} (Dark Mode)`}
-									className="object-contain size-full hidden dark:block"
+									src={image}
+									alt={name}
+									className={cn(
+										"object-contain size-full",
+										hasDarkImage ? "dark:hidden" : "",
+									)}
 									width={512}
 									height={512}
 								/>
-							)}
-						</>
-					)}
-				</CardContent>
-				<CardHeader className="text-center mt-8">
-					<CardTitle className="text-2xl">{name}</CardTitle>
-					<div className="text-sm text-blue-300 flex flex-row items-center justify-center gap-2">
-						<p>Learn More</p> <ExternalLink className="mt-0.5" size={16} />
-					</div>
-				</CardHeader>
-			</Card>
+								{hasDarkImage && (
+									<Image
+										src={darkImage}
+										alt={`${name} (Dark Mode)`}
+										className="object-contain size-full hidden dark:block"
+										width={512}
+										height={512}
+									/>
+								)}
+							</>
+						)}
+					</CardContent>
+					<CardHeader className="text-center mt-8">
+						<CardTitle className="text-2xl">{name}</CardTitle>
+						<div className="text-sm text-blue-300 flex flex-row items-center justify-center gap-2">
+							<p>Learn More</p> <ExternalLink className="mt-0.5" size={16} />
+						</div>
+					</CardHeader>
+				</Card>
+			</AnimatedCard>
 		</Link>
 	);
 }

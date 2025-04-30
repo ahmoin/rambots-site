@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function MCSMBanner() {
 	return (
-		<div className="w-screen bg-gradient-to-r from-slate-800 to-slate-900 h-[300px] md:h-[400px] lg:h-[300px] my-8 relative left-1/2 -translate-x-1/2">
+		<div className="w-[101vw] bg-gradient-to-r from-slate-800 to-slate-900 h-[400px] lg:h-[300px] my-8 relative left-1/2 -translate-x-1/2">
 			<div className="container mx-auto px-4 py-6 h-full">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center h-full">
 					<div className="space-y-6 md:col-span-2 text-amber-50">
