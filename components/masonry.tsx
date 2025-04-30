@@ -3,6 +3,13 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 
 import { useTransition, a } from "@react-spring/web";
+import {
+	Dialog,
+	DialogContent,
+	DialogTrigger,
+	DialogClose,
+} from "@/components/ui/dialog";
+import { XIcon } from "lucide-react";
 
 interface MasonryItem {
 	id: string | number;
@@ -23,6 +30,7 @@ interface MasonryProps {
 
 const Masonry: React.FC<MasonryProps> = ({ data }) => {
 	const [columns, setColumns] = useState<number>(2);
+	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 	useEffect(() => {
 		const updateColumns = () => {
@@ -110,12 +118,33 @@ const Masonry: React.FC<MasonryProps> = ({ data }) => {
 					style={style}
 					className="absolute will-change-transform will-change-width will-change-height will-change-opacity p-2.5"
 				>
-					<div
-						className="relative bg-cover bg-center w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out hover:scale-110"
-						style={{
-							backgroundImage: `url(${item.image})`,
-						}}
-					/>
+					<Dialog>
+						<DialogTrigger asChild>
+							<div
+								className="relative bg-cover bg-center w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer"
+								style={{
+									backgroundImage: `url(${item.image})`,
+								}}
+								onClick={() => {
+									setSelectedImage(item.image);
+								}}
+							/>
+						</DialogTrigger>
+						<DialogContent className="md:min-w-[80vw]">
+							{selectedImage && (
+								// eslint-disable-next-line @next/next/no-img-element
+								<img
+									src={selectedImage}
+									alt="Full Size"
+									className="w-full h-auto object-contain"
+								/>
+							)}
+							<DialogClose className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none [&_svg]:h-4 [&_svg]:w-4">
+								<XIcon className="h-4 w-4" />
+								<span className="sr-only">Close</span>
+							</DialogClose>
+						</DialogContent>
+					</Dialog>
 				</a.div>
 			))}
 		</div>
