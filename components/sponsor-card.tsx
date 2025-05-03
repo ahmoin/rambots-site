@@ -63,7 +63,7 @@ export function SponsorCard({
 			<CardContent className="flex-grow pt-6">
 				<ul className="space-y-3">
 					{benefits.map((benefit, index) => (
-						<li key={index} className="flex items-start">
+						<li key={benefit} className="flex items-start">
 							<Check className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
 							<span>{benefit}</span>
 						</li>
