@@ -80,7 +80,7 @@ export default function SponsorshipCards() {
 			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-				{sponsorshipTiers.map((tier, index) => (
+				{sponsorshipTiers.map((tier) => (
 					<SponsorCard
 						key={tier.tier}
 						tier={tier.tier}
