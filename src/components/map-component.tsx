@@ -41,9 +41,9 @@ export function MCSMMap() {
 							type: "raster",
 							source: "osm",
 							paint: {
-								"raster-brightness-min": 0.1,
-								"raster-brightness-max": 0.3,
-								"raster-contrast": 0.8,
+								"raster-brightness-min": 0,
+								"raster-brightness-max": 0.4,
+								"raster-contrast": 0.4,
 								"raster-saturation": -0.8,
 							},
 						},
@@ -95,11 +95,7 @@ export function MCSMMap() {
 
 	return (
 		<div className="w-screen h-screen absolute inset-x-0">
-			<div
-				ref={mapContainer}
-				className="w-full h-full"
-				style={{ background: "#1a1a1a" }}
-			/>
+			<div ref={mapContainer} className="w-full h-full bg-background" />
 		</div>
 	);
 }
