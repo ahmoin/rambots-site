@@ -94,7 +94,7 @@ export function MCSMMap() {
 	}
 
 	return (
-		<div className="w-screen h-screen absolute inset-x-0">
+		<div className="w-screen h-192 absolute inset-x-0">
 			<div ref={mapContainer} className="w-full h-full bg-background" />
 		</div>
 	);
