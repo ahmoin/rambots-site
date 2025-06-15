@@ -1,9 +1,9 @@
 "use client";
 
 import { MCSMBanner } from "@/components/mcsm-banner";
-import SplitText from "@/components/split-text";
 import { Sponsors } from "@/components/sponsors";
 import { TextAnimate } from "@/components/text-animate";
+import { WordReveal } from "@/components/word-reveal";
 import { siteConfig } from "@/lib/config";
 
 const _title = "FRC Team 4571 - The Rambots";
@@ -20,17 +20,9 @@ export default function IndexPage() {
 			<div className="flex flex-row gap-8 mt-16 -mb-16 md:-mb-0">
 				<div className="w-full max-w-3xl mx-auto text-center flex flex-col justify-between">
 					{/* <div className="w-1/2 min-w-2xl text-left flex flex-col justify-between"> */}
-					<SplitText
+					<WordReveal
 						text="The Rambots"
 						className="text-6xl md:text-8xl font-semibold text-special"
-						delay={10}
-						duration={2}
-						ease="elastic.out(1, 0.3)"
-						splitType="words, chars"
-						threshold={0.1}
-						rootMargin="-100px"
-						// textAlign="left"
-						textAlign="center"
 					/>
 					<h2 className="text-2xl md:text-4xl text-muted-foreground w-full mx-auto">
 						<TextAnimate animation="blurInUp" by="word" once>
