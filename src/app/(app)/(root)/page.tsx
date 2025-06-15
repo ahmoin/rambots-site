@@ -30,7 +30,7 @@ export default function IndexPage() {
 				</div>
 			</div>
 			<div className="mt-8">
-				<MCSMBanner />
+				<MCSMBanner className="z-10" />
 			</div>
 			<Sponsors />
 		</div>

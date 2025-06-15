@@ -63,7 +63,7 @@ export function MCSMMap() {
 				setTimeout(() => {
 					if (map.current) {
 						map.current.flyTo({
-							center: [-73.9333, 40.79428], // Manhattan Center for Science and Mathematics coordinates
+							center: [-73.9330157977551, 40.793998427538135], // Manhattan Center for Science and Mathematics coordinates
 							zoom: 18, // Zoomed in to building level
 							pitch: 45, // Add some tilt for a more dynamic view
 							bearing: -17.6, // Slight rotation
