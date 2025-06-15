@@ -1,12 +1,15 @@
 import { Atom, Award, BookOpen, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 export function MCSMBanner({
 	className,
 	...props
 }: React.ComponentProps<"div">) {
+	const isMobile = useIsMobile();
+
 	return (
 		<div
 			className={cn(
@@ -59,16 +62,18 @@ export function MCSMBanner({
 							</Button>
 						</Link>
 					</div>
-					<div className="relative h-[200px] md:h-[250px] rounded-lg overflow-hidden hidden md:block">
-						<div className="absolute inset-0 bg-black/20 z-10 rounded-lg"></div>
-						<video
-							src="/media/mcsm.mp4"
-							className="w-full h-full object-cover rounded-lg"
-							autoPlay
-							loop
-							muted
-						/>
-					</div>
+					{isMobile ? null : (
+						<div className="relative h-[250px] rounded-lg overflow-hidden">
+							<div className="absolute inset-0 bg-black/20 z-10 rounded-lg"></div>
+							<video
+								src="/media/mcsm.mp4"
+								className="w-full h-full object-cover rounded-lg"
+								autoPlay
+								loop
+								muted
+							/>
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
